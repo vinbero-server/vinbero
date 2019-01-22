@@ -1,0 +1,12 @@
+[submodule "submodules/libvinbero_common"]
+	path = submodules/libvinbero_common
+	url = https://github.com/vinbero/libvinbero_common
+[submodule "submodules/libgenc"]
+	path = submodules/libgenc
+	url = https://github.com/vinbero/libgenc
+[submodule "submodules/libgaio"]
+	path = submodules/libgaio
+	url = https://github.com/vinbero/libgaio
+[submodule "submodules/libfastdl"]
+	path = submodules/libfastdl
+	url = https://github.com/vinbero/libfastdl
