@@ -28,7 +28,6 @@ int vinbero_Options_process(int argc, char* argv[], struct vinbero_common_Config
         {"logging-option", required_argument, NULL, 'o'},
         {NULL, 0, NULL, 0}
     };
-    json_error_t configError;
     char optionChar;
     bool optionsExist = false;
     while((optionChar = getopt_long(argc, argv, "i:c:f:o:vh", options, NULL)) != (char) - 1) {

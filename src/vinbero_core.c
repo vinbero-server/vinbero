@@ -58,6 +58,7 @@ int vinbero_core_registerSignalHandlers() {
         return -errno;
     if(sigaction(SIGPIPE, &signalAction, NULL) == -1)
         return -errno;
+    return VINBERO_COMMON_STATUS_SUCCESS;
 }
 
 void vinbero_core_registerExitHandler() {
@@ -86,15 +87,14 @@ int vinbero_core_checkConfig(struct vinbero_common_Config* config, const char* m
 
 int vinbero_core_initLocalModule(struct vinbero_common_Module* module, struct vinbero_common_Config* config) {
     VINBERO_COMMON_LOG_TRACE2();
-    int ret;
     GENC_TREE_NODE_SET_PARENT(module, NULL);
     module->id = "core";
     module->config = config;
     vinbero_common_Module_init(module, "core", VINBERO_VERSION, true);
     module->localModule.pointer = malloc(1 * sizeof(struct vinbero_core));
     struct vinbero_core* localModule = module->localModule.pointer;
-    vinbero_common_Config_getInt(module->config, module, "vinbero.setUid", &localModule->setUid, geteuid());
-    vinbero_common_Config_getInt(module->config, module, "vinbero.setGid", &localModule->setGid, getegid());
+    vinbero_common_Config_getInt(module->config, module, "vinbero.setUid", (int*)&localModule->setUid, (int)geteuid());
+    vinbero_common_Config_getInt(module->config, module, "vinbero.setGid", (int*)&localModule->setGid, (int)getegid());
     return VINBERO_COMMON_STATUS_SUCCESS;
 }
 

@@ -1,3 +1,4 @@
 *.so
-build/
 *.swp
+*.gcov
+build/
