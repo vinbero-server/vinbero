@@ -104,6 +104,6 @@ before_script:
   - cd build
   - cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 
-script: make && ctest --verbose
+script: make && ctest -V && make gcov
 after_success:
   - bash <(curl -s https://codecov.io/bash)
