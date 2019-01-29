@@ -11,7 +11,6 @@ int vinbero_core_initLocalModule(struct vinbero_common_Module* module, struct vi
 int vinbero_core_loadChildModules(struct vinbero_common_Module* module);
 int vinbero_core_initChildModules(struct vinbero_common_Module* module);
 int vinbero_core_rInitChildModules(struct vinbero_common_Module* module);
-int vinbero_core_sendArgsChildModules(struct vinbero_common_Module* module);
 int vinbero_core_start(struct vinbero_common_Module* module);
 int vinbero_core_setGid(struct vinbero_common_Module* module);
 int vinbero_core_setUid(struct vinbero_common_Module* module);

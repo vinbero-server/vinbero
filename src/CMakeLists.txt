@@ -8,7 +8,7 @@ set_target_properties(vinbero_core PROPERTIES VERSION ${vinbero_version}
                                               PUBLIC_HEADER "${vinbero_core_public_headers}")
 find_library(fastdl libfastdl.so REQUIRED)
 find_library(gaio libgaio.so.0.3 REQUIRED)
-target_link_libraries(vinbero_core ${fastdl} ${gaio} jansson pthread dl)
+target_link_libraries(vinbero_core ${fastdl} ${gaio} pthread dl)
 install(TARGETS vinbero_core 
         LIBRARY DESTINATION lib
         PUBLIC_HEADER DESTINATION include/vinbero)
