@@ -3,10 +3,10 @@ sudo: required
 language: c
 compiler:
   - gcc
-branches:
-  only:
-    - master
-    - dev
+#branches:
+#  only:
+#    - master
+#    - dev
 before_install:
   - pwd
   - git clone git://git.cryptomilk.org/projects/cmocka.git
